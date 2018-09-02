@@ -136,12 +136,53 @@
     <hr>
 
     <article style="padding-left: 10px">
-            <header><h1 style="color:rgb(165, 116, 201)">Formulário </h1></header>
+            <header><h1 style="color:rgb(165, 116, 201)"> Formulário Newsletters </h1></header>
             
             <section>
-                    <header> <h3 style="color:#F28DAD"> desenvolvimento do formulário </h3> </header>
-                    <p> boneco de palito</p>
+                    <header> <h3 style="color:#F28DAD"> Para receber mais dicas, cadastre-se no formulário abaixo </h3> </header>
+                
+                        <form action="/action_page.php" method=GET style="color:rgb(165, 116, 201)">
+
+                                <label><b>Nome</b></label>
+                                <input type="text" placeholder="Máximo 15 caracteres" name="email" maxlength="15" required>
+                                <br><br>
+                                <label><b>Sorteio - escolha um número</b></label>
+                                <input type="number" name="numerosorteio" min="25000" max="30000">
+                                <br><br>
+                                <p> Selecione sua idade</p>
+                                <input type="radio" name="idade" value="min"> Entre 15 e 20 anos <br>
+                                <input type="radio" name="idade" value="med"> Entre 21 e 29 anos<br>
+                                <input type="radio" name="idade" value="max"> 30 anos ou mais<br><br> </div>
+                                <p>Defina sobre o que você deseja receber</p>
+                                <input type="checkbox" name="assunto1" value="feminismo"> Feminismo <br>
+                                <input type="checkbox" name="assunto2" value="anos80"> Anos 80 <br>
+                                <input type="checkbox" name="assunto3" value="anos90"> Anos 90 <br>
+                                <input type="checkbox" name="assunto4" value="podcast"> Dicas de Podcasts <br>
+                                <br>
+                                <input type="text" name="dia" readonly value="Dia">
+                                <input type="text" name="mes" readonly value="Mês">
+                                <input type="text" name="ano" readonly value="Ano">
+                                <br>
+                                <input type="text" name="dia2" required>
+                                <input type="text" name="dia2" required>
+                                <input type="text" name="dia2" required>
+                                <br>
+                                <p>Ao criar sua conta, você concorda com os <a href="https://policies.google.com/terms?hl=pt-PT&gl=pt">Termos de Uso</a>.</p> <form action="http://www.w3schools.com/html/action_page.php"></form>
+                
+                
+                                <input type="submit">
+                                <br><br>
+                            </form>
+
                     <footer> <i> Postado por </i><strong>Raíssa Barros</strong></footer>
+                        <br><br>
+                    <footer style="background-color:rgb(182, 192, 245); height:120px; text-align: center; padding:10px">
+
+                        <p>Postado por <strong>Raíssa Barros</strong></p>
+                        <p>E-mail para contato: <a href="raissabarros@alu.ufc.br" style="color:rgb(201, 107, 255)"> raissabarros@alu.ufc.br</a></p>
+                        <p> Universidade Federal do Ceará</p>
+                    
+                    </footer>
             </section>
     
     </article>
