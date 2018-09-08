@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+   background-color:#DEDEDC;
+
+}
+
+#img-capa{
+    height:600px;
+    width: 100%;
+}
+
+#titulo-blog {
+    text-align: center;
+    padding: 15px;
+    background-color:#DDDDDB;
+    font-size: 40px;
+}
+
+nav {
+    background-color:rgb(182, 192, 245);
+    position: relative;
+    text-align: center;
+    height:20px;
+    padding: 10px;
+}
+
+nav a{
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+article {
+    background-color: "https://www.dropbox.com/s/a40i7ku680oph8w/gradient_bg.png";
+    text-align: center;
+    ;
+}
+
+h1{
+    color:rgb(165, 116, 201);
+    padding: 5px 0;
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px;
+}
+
+.minha-classe{
+    color:#F28DAD;
+    padding: 10px 0;
+}
+
+iframe {
+    width: 420px;
+    height: 370px;
+}
+
+footer {
+    padding: 10px 0;
+}
+
+#fonte-form{
+    color:rgb(165, 116, 201);
+    font-size: 20px;
+}
+
+#email{
+    color:rgb(201, 107, 255);
+}
+
+#rodape {
+    background-color:rgb(182, 192, 245);
+    height:60px;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+#titulo-blog, nav a{
+    color:rgb(165, 116, 201);
+}
+
+
