@@ -8,6 +8,13 @@ body {
 
 }
 
+h1{
+    color:rgb(165, 116, 201);
+    padding: 5px 0;
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px;
+}
+
 #img-capa{
     height:600px;
     width: 100%;
@@ -26,30 +33,27 @@ nav {
     text-align: center;
     height:20px;
     padding: 10px;
+    background: url('./gradiente.png') repeat-x;
 }
 
 nav a{
     margin-left: 10px;
     margin-right: 10px;
     font-size: 20px;
+    font-family: 'Neuton', serif;
 }
+
 
 article {
-    background-color: "https://www.dropbox.com/s/a40i7ku680oph8w/gradient_bg.png";
+    /*background-color: "https://www.dropbox.com/s/a40i7ku680oph8w/gradient_bg.png";*/
     text-align: center;
-    ;
 }
-
-h1{
-    color:rgb(165, 116, 201);
-    padding: 5px 0;
-    font-family: 'Amatic SC', cursive;
-    font-size: 30px;
-}
-
-.minha-classe{
+   
+.minha-classe {
     color:#F28DAD;
     padding: 10px 0;
+    font-size: 20px;
+
 }
 
 iframe {
@@ -61,25 +65,60 @@ footer {
     padding: 10px 0;
 }
 
+
 #fonte-form{
     color:rgb(165, 116, 201);
     font-size: 20px;
 }
 
+
 #email{
     color:rgb(201, 107, 255);
-}
-
-#rodape {
-    background-color:rgb(182, 192, 245);
-    height:60px;
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
 }
 
 #titulo-blog, nav a{
     color:rgb(165, 116, 201);
 }
 
+.rodape {
+    background-color:rgb(182, 192, 245);
+    height: 60px;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    margin: auto;
+}
+
+nav a, .minha-classe{
+    font-family: 'Neuton', serif;
+}
+
+#borda1 {
+    border: dotted 5px rgb(182, 192, 245);
+    margin: auto;
+    max-width: 5cm;
+    padding: 2px;
+    
+   /* border-style: dotted;
+    border-width: 10px;
+    border-color: green;*/
+}
+
+#borda2 {
+
+        border: solid 5px;
+        border-color: rgb(182, 192, 245) rgb(165, 116, 201);
+        margin: auto;
+        max-width: 5cm;
+        padding: 2px;
+}
+
+
+.borda3 {
+    border: dashed 5px;
+    border-color: rgb(182, 192, 245) rgb(201, 107, 255) rgb(165, 116, 201)  rgb(146, 129, 243);
+    padding: 10px;
+    max-width: 50vw;
+    margin: auto;
+    }
 

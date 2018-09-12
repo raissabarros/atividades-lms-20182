@@ -7,9 +7,12 @@
     <title>Blog da Raíssa</title>
     <link rel=stylesheet href="./atividade03.css">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Neuton" rel="stylesheet">
 </head>
 <style>
         @import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+        @import url('https://fonts.googleapis.com/css?family=Neuton');
+
 </style>
 <body>
     
@@ -35,7 +38,7 @@
                 <p> A Dieta Low Carb é baseada em uma redução do consumo de carboidratos simples na alimentação, como arroz branco, macarrão e pão. Para compensar a redução no carboidrato, deve-se aumentar a ingestão de proteínas como carnes e ovos, e de gorduras boas, que estão presentes em alimentos como abacate, castanhas, azeite e peixes como sardinha e salmão.</p>
                 <footer><i> Postado por </i><strong>Raíssa Barros</strong></footer>
         </section>
-
+           
         <section>
                 <header> <h3 class="minha-classe"> Dieta do ovo </h3> </header>
                 <p> A dieta do ovo é baseada em incluir de 2 a 4 ovos por dias nas refeições, tornando a dieta rica em proteínas e altamente saciante, afastando a fome por mais tempo.
@@ -108,8 +111,8 @@
             <header><h1>Dicas </h1></header>
             
             <section>
-                    <header> <h3 class="minha-classe"> Pilates com bola </h3> </header>
-                    
+                    <header> <h3 class="minha-classe" id="borda1"> Pilates com bola </h3> </header>
+                    <br>
                     <iframe src="https://www.youtube.com/embed/xFufz8E89rw">
                     </iframe>
                    
@@ -118,7 +121,8 @@
             </section>
 
             <section>
-                    <header> <h3 class="minha-classe"> Podcast PodProgramar </h3> </header>
+                    <header> <h3 class="minha-classe" id="borda2"> Podcast PodProgramar </h3> </header>
+                    <br>
                     <p> Podcast maravilhoso sobre mulheres programadoras front-end!</p>
                     <br>
                     <audio controls>
@@ -142,7 +146,7 @@
             <section>
                     <header> <h3 class="minha-classe"> Para receber mais dicas, cadastre-se no formulário abaixo </h3> </header>
                 
-                        <form action="http://www.w3schools.com/action_page.php" method=GET id="fonte-form">
+                        <form action="http://www.w3schools.com/action_page.php" method=GET id="fonte-form" class="borda3">
 
                                 <label><b>Nome</b></label>
                                 <input type="text" placeholder="Máximo 15 caracteres" name="email" maxlength="15" required>
@@ -168,7 +172,7 @@
                                 <input type="text" name="dia2" required>
                                 <input type="text" name="dia2" required>
                                 <br>
-                                <p>Ao criar sua conta, você concorda com os <a href="https://policies.google.com/terms?hl=pt-PT&gl=pt">Termos de Uso</a>.</p> <form action="http://www.w3schools.com/html/action_page.php"></form>
+                                <p>Ao criar sua conta, você concorda com os <a href="https://policies.google.com/terms?hl=pt-PT&gl=pt">Termos de Uso</a>.</p> <form action="http://www.w3schools.com/html/action_page.php">
                 
                 
                                 <input type="submit">
@@ -181,7 +185,7 @@
     
     </article>
 
-    <footer id="rodape">
+    <footer class="rodape">
 
                 <p>Postado por <strong>Raíssa Barros</strong></p>
                 <p>E-mail para contato: <a href="raissabarros@alu.ufc.br" id="email"> raissabarros@alu.ufc.br</a></p>
