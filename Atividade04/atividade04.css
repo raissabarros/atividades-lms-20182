@@ -34,6 +34,10 @@
     list-style-type: none;
 }
 
+.dropdown-conteudo .menu-dropdown li a{
+    padding: 10px 20px;
+}
+
 .menu-sup ul li a{
     font-size: 18px;
     color: #FFFFFF;
@@ -51,7 +55,7 @@
 
 .nav-lateral {
     background-color: #FFFFFF;
-    box-shadow: 2px 2px rgba(0, 0, 0,0.2);
+    box-shadow: 1px 2px rgba(0, 0, 0,0.2);
     width: 150px;
     font-family: Arial, Helvetica, sans-serif;
     overflow: hidden;
@@ -91,6 +95,7 @@
     width: 200px;
     color:black;
     display: none;
+    box-shadow:  0px 2px rgba(0, 0, 0,0.2);
 }
 
 .dropdown:hover .dropdown-conteudo{
@@ -102,6 +107,16 @@
     width: 100%;
     cursor: pointer;
     color: black;
-    /*display: block;*/
+}
+
+.dropdown-conteudo .menu-dropdown li p{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    color: black;
+}
+
+.dropdown-conteudo .menu-dropdown a{
+    color: black;
 }
 
