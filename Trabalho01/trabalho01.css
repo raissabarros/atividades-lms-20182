@@ -33,6 +33,7 @@
 }
 
 .nav-sup {
+    
     background-color: rgb(141, 102, 214);
     background-image: linear-gradient(90deg, midnightblue, mediumvioletred);
     height: 50px;
@@ -41,24 +42,32 @@
     position: fixed;
     /*position: relative;*/
     /*text-align: center*/
-   /* overflow: hidden;*/
+    overflow: hidden;
+    font-family: 'Amatic SC', cursive;
+    color: white;
 }
 
-.link-menu-sup{
+/*
+.dropdown-ativar a{
     position: relative;
     text-align: center;
 }
+*/
 
-.link-menu-sup ul{
+/*
+.dropdown-ativar ul{
    list-style-type: none;
    /*overflow: hidden;*/
    /*float: left;*/
-   /*display: block;
-   */
+   /*display: block; 
 }
+*/
 
-.link-menu-sup ul li a{
+/*
+.dropdown-ativar .dropdown-conteudo  ul li, a{
+    */
     /*overflow: hidden;*/
+    /*
     display: block;
     font-family: 'Amatic SC', cursive;
     text-decoration: none;
@@ -66,15 +75,20 @@
     color: white;
     padding: 8px 30px;
     font-size: 25px;
-    /*text-align: center;*/
-}
 
+    /*text-align: center;*/
+    /*
+}
+*/
+/*
 .nav-sup .link-menu-sup .campo-busca{
     padding: 0px 10px;
     text-align: right;
     margin-right: 10px;
     /*float:right;*/
+/*
 }
+*/
 
 #campo-busca{
     padding: 5px;
@@ -96,4 +110,87 @@
     border-style: none;
     height: 20px;
     width: 20px;
+}
+
+/*
+.nav-sup .link-menu-sup .dropdown01 .dropdown-ativar .dropdown-conteudo{
+    display: block;
+}
+
+.nav-sup .link-menu-sup .dropdown01 .dropdown-ativar .dropdown-conteudo:hover{
+    background-color: black;
+}
+
+.dropdown01 .dropdown-ativar{
+    display: block;
+}
+
+.dropdown01 {
+    float:left;
+}
+*/
+
+
+.nav-sup ul{
+    list-style-type: none;
+
+
+/*}
+.dropdown01 .dropdown-conteudo .lista-dropdown01 li a{
+    padding: 10px;
+    color: white;
+    font-size: 30px;
+}
+
+.dropdown-conteudo .lista-dropdown01 li a:hover{
+    background-color: black;
+}
+
+.dropdown{
+    float: left;
+}
+
+.dropdown-ativar {
+    display:block;
+}
+
+.dropdown01 .dropdown-conteudo {
+    position: absolute;
+    background-color: #dbdbdb;
+    overflow: hidden;
+    margin-top: 60px;
+    width: 200px;
+    color:black;
+    display: none;
+    box-shadow:  0px 2px rgba(0, 0, 0,0.2);
+}
+
+.dropdown:hover .dropdown-conteudo{
+    display: block;
+}
+
+.dropdown01 .dropdown-ativar:hover , .dropdown-conteudo .lista-dropdown01 li a:hover{
+    background-color:rgb(166, 168, 164);
+    width: 100%;
+    cursor: pointer;
+    color: black;
+}
+
+
+
+.dropdown-conteudo .lista-dropdown01 a{
+    color: black;
+}
+
+
+*/
+
+.dropdown01 {
+    float: left;
+}
+
+.nav-sup ul li .dropdown01 .dropdown-ativar a {
+    padding: 10px;
+    font-family: 'Amatic SC', cursive;
+    color: white;
 }
