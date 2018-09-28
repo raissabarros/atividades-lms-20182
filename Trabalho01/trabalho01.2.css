@@ -60,8 +60,7 @@
 }
 
 
-.nav-sup {
-    
+.nav-sup {   
     background-color: rgb(141, 102, 214);
     background-image: linear-gradient(90deg, midnightblue, mediumvioletred);
     height: 50px;
@@ -77,10 +76,9 @@
 .nav-sup ul{
     list-style-type: none;
     /*overflow: hidden;*/
-    
 }
 
-.nav-sup ul a{
+.nav-sup .dropdown .dropdown-ativar a{
     text-decoration: none;
     color: white;
     font-size: 28px;
@@ -88,6 +86,11 @@
     float: left;
     display: block;
 
+}
+
+.dropdown .dropdown-conteudo > .lista-dropdown > li > a {
+    font-size: 20px;
+    color: black;
 }
 
 .dropdown {
@@ -104,12 +107,12 @@
 
 .nav-sup .dropdown .dropdown-conteudo{
     position: absolute;
-    background-color: rgba(200, 100, 200,0.5);
+    background-color:#C61585;
     text-decoration: none;
     /* padding: 10px; */
     overflow: hidden;
     max-height: 0;
-    transition: 2000ms;          
+    transition: 1500ms;          
     display: block;
     /* o display tem que ser block porque o transition não funciona com display none*/
     /* o max-height 0 garante que o display não vai aparecer a princípio*/
@@ -121,18 +124,21 @@
 }
 
 
-
-
-.nav-sup .dropdown .dropdown-conteudo .lista-dropdown li a{
+.dropdown .dropdown-ativar:hover, .dropdown .dropdown-conteudo .lista-dropdown li a{
+    font-size: 20px;
+    /*color: black;*/
     display: block;
+    text-decoration:none;
+
+}
+.dropdown .dropdown-conteudo .lista-dropdown li a{
+    width: 150px;
+    font-family:  'Amatic SC', cursive;
+    font-size: 20px;
+    color: white;
     padding: 10px;
-}
 
-.nav-sup .dropdown .dropdown-conteudo .lista-dropdown li a:hover{
-    /*width: 100%;*/
-    /*padding: 10px;*/
 }
-
 
 .dropdown .dropdown-ativar:hover, .dropdown .dropdown-conteudo .lista-dropdown li a:hover{
     background-color:rgba(0, 0, 0,0.2);
@@ -146,5 +152,50 @@
     padding: 7px 20px;
 }
 
+.nav-esquerdo-movel {
+    padding: 10px;
+    background-color: #C61585;
+    position: fixed;
+   /* overflow: auto;*/
+    top: 450px;
+    right: 0;
+    /*bottom: 10px;*/
+    box-sizing: border-box;
+
+}
+
+.nav-esquerdo-movel {
+
+}
 
 
+
+
+.container {
+    padding: 20px 20%;
+}
+
+/*
+se não tiver position fixed, nem relative e nem absolute, não existe as propriedades top, left, bottom e right.
+só existe o normal (margin-top, margin-left...).
+
+*/
+
+
+
+
+/*
+.menuesq{
+    background: linear-gradient( to right, gold , lightgoldenrodyellow);
+    width: 150px;
+    height: auto;
+    padding: 10px;
+    border-radius:0 20px 0px 0;
+    position: fixed;
+    overflow: auto;
+    box-shadow: 4px 4px 2px rgba(0, 0, 0, .5);
+
+
+
+}
+*/
