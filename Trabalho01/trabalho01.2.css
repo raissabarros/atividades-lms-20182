@@ -3,6 +3,9 @@
     padding: 0;
 }
 
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+
 .capa {
     width: 100%;
     height: 400px;
@@ -152,28 +155,117 @@
     padding: 7px 20px;
 }
 
-.nav-esquerdo-movel {
-    padding: 10px;
-    background-color: #C61585;
+.nav-direito-fixo {
+   padding: 10px;
+   background-image: linear-gradient(-90deg, midnightblue, mediumvioletred);
     position: fixed;
    /* overflow: auto;*/
     top: 450px;
     right: 0;
     /*bottom: 10px;*/
     box-sizing: border-box;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0px 4px 4px  rgba(0, 0, 0,0.3);
 
 }
 
-.nav-esquerdo-movel {
+.nav-direito-fixo ul li {
+    list-style-type: none;
+}
 
+.nav-direito-fixo ul li a{
+    text-decoration: none;
+    font-family: 'Amatic SC', cursive;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+   /* padding: 10px; */
+}
+
+.nav-direito-fixo a:hover{
+    background-color:rgba(0, 0, 0,0.2);
+    width: 100%;
 }
 
 
-
-
-.container {
-    padding: 20px 20%;
+.nav-esquerdo-movel{
+    width: 250px;
+    background-image: linear-gradient(90deg, midnightblue, mediumvioletred);
+    position: relative;
+    padding: 10px;
+    margin-top: 200px;
+    float: left;
+   /* z-index: 1;*/
+   box-shadow: 4px 4px 4px  rgba(0, 0, 0,0.3);
 }
+
+.nav-esquerdo-movel ul {
+    list-style-type: none;
+}
+
+.nav-esquerdo-movel ul li a{
+    text-decoration: none;
+    font-family: 'Amatic SC', cursive;
+    font-size: 25px;
+    color: white;
+}
+
+.nav-esquerdo-movel ul li a:hover{
+    background-color: rgba(0, 0, 0,0.2);
+}
+
+
+.container{
+    width: 50vw;
+    height: 100vh;
+}
+.container .ovni img {
+    height: 210px;
+    width: 250px;
+    z-index: 4;
+    /*float: left;*/
+    transform: translate(200px, 200px) rotate(360deg) scale(1,1);
+    
+}
+
+
+#rodape{
+    width: 100%;
+    background-image: linear-gradient(-90deg, midnightblue, mediumvioletred);
+    height: 40px;
+    text-align: center;
+    overflow: hidden;
+}
+
+#rodape p{
+    color: white;
+    padding: 10px;
+    font-family: 'Amatic SC', cursive;
+}
+
+@keyframes rodar-transladar{
+    0% {
+        transform: translate(0px, 0px) rotate(360deg);
+    }
+    
+
+    50%{
+        transform: translate(200px, 200px) rotate(360deg) ;
+    }
+
+    75%{
+        transform: translate(200px, 0px);
+    }
+}
+
+.ovni {
+    animation-name: rodar-transladar;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+
 
 /*
 se não tiver position fixed, nem relative e nem absolute, não existe as propriedades top, left, bottom e right.
@@ -181,21 +273,61 @@ só existe o normal (margin-top, margin-left...).
 
 */
 
-
-
-
-/*
-.menuesq{
-    background: linear-gradient( to right, gold , lightgoldenrodyellow);
-    width: 150px;
+@media screen and (max-width: 600px){
+    
+.nav-sup {
+    max-width: 600px;
     height: auto;
-    padding: 10px;
-    border-radius:0 20px 0px 0;
-    position: fixed;
-    overflow: auto;
-    box-shadow: 4px 4px 2px rgba(0, 0, 0, .5);
+}
+
+    .nav-esquerdo-movel{
+        width: 100%;
+        background-image: linear-gradient(90deg, midnightblue, mediumvioletred);
+        /*position: fixed;*/
+        padding: 10px;
+        /*margin-top: 200px;*/
+        float: left;
+        z-index: 1;
+       box-shadow: 4px 4px 4px  rgba(0, 0, 0,0.3);
+       text-align: center;
+       top: 0;
+    
+    }
 
 
+    .container {
+        z-index: 2;
+        float: left;
+        max-width: 600px;
+      
+    }
+
+
+    
+    .nav-direito-fixo {
+        padding: 10px;
+        background-image: linear-gradient(-90deg, midnightblue, mediumvioletred);
+        /* position: fixed;*/
+        /* overflow: auto;*/
+         /*top: 450px;*/
+        /* right: 0;*/
+         /*bottom: 10px;*/
+        /* box-sizing: border-box;*/
+         width: 100%;
+         text-align: center;
+         box-shadow: 0px 4px 4px  rgba(0, 0, 0,0.3);
+         height: auto;
+         z-index: 1;
+         float: left;
+         position: relative;
+         top: 0;
+    }
+
+    #rodape{
+        max-width: 600px;
+    }
+
+    
+    
 
 }
-*/
