@@ -220,15 +220,19 @@
     width: 50vw;
     height: 100vh;
 }
+
 .container .ovni img {
     height: 210px;
     width: 250px;
-    z-index: 4;
-    /*float: left;*/
-    transform: translate(200px, 200px) rotate(360deg) scale(1,1);
+
     
 }
 
+.ovni {
+    z-index: 4;
+    /*float: left;*/
+    /*transform: translate(200px,200px) rotate(360deg) scale(1,1);*/
+}
 
 #rodape{
     width: 100%;
@@ -246,20 +250,27 @@
 
 @keyframes rodar-transladar{
     0% {
-        transform: translate(0px, 0px) rotate(360deg);
-    }
-    
-
-    50%{
-        transform: translate(200px, 200px) rotate(360deg) ;
+        transform: translate(0,100px) rotate(0deg);
     }
 
-    75%{
-        transform: translate(200px, 0px);
+    25% {
+        transform: translate(80%,100px) rotate(360deg);
+    }
+
+    50% {
+        transform: translate(0,100%) rotate(720deg);
+    }
+
+    75% {
+        transform: translate(80%,100%) rotate(1080deg);
+    }
+
+    100% {
+        transform: translate(0,100px) rotate(1080deg);
     }
 }
 
-.ovni {
+.animacao {
     animation-name: rodar-transladar;
     animation-duration: 5s;
     animation-iteration-count: infinite;
