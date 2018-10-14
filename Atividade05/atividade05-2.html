@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<style>
+     * {
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background-color: green;
+        height: 80px;
+        width: 80%;
+        position: relative;
+        float: left;
+        transition: 500ms;
+        left: 20%;
+    }
+
+    h1 {
+        color: white;
+        padding: 20px;
+    }
+
+     .menu-sanduba {
+        background-color: rgba(50, 50, 50, 0.5);
+        border-radius: 5px;
+        width: 25px;
+        height: auto;
+        padding: 6px;
+        position: relative;
+        float: left;
+        display: none;
+        margin: 20px;
+        font-size: 20px;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    header h1 {
+        padding: 20px;
+    }
+
+     .nav-lateral {
+        background-color: lightseagreen;
+        height: 100vh;
+        width: 20%;
+        position: fixed;
+        display: block;
+        overflow-x: hidden;
+        transition: 500ms;
+    }
+
+    .nav-lateral ul li{
+        list-style-type:none;
+        padding: 10px;
+    }
+
+    .container {
+        width: 80%;
+        background-color: lightgoldenrodyellow;
+        left: 20%;
+        top: 80px;
+        position: absolute;
+        height: calc(100vh - 80px);
+        transition: 500ms;
+    }
+
+    .accordeon{
+        margin: auto;
+        width: 80%;
+        background-color:peru;
+    }
+
+    .accordeon .accordeon-botao{
+        background-color: cadetblue;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    .accordeon .accordeon-botao:hover{
+        background-color: rgba(147, 196, 12, 0.5);
+    }
+
+    .accordeon .accordeon-conteudo{
+        height: 0;
+        overflow: hidden;
+        transition: 500ms;
+        display: block;
+        padding: 0 15px 0 15px;
+    }
+
+    .accordeon-conteudo.active{
+        height: auto;
+        padding: 15px;
+    }
+
+    .colecao-accordeon{
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    @media screen and (max-width: 480px){
+        .menu-sanduba{
+            display: block;
+        }
+
+        .nav-lateral{
+            transform: translateX(-100%);
+        }
+
+        .nav-lateral.active{
+            transform: translateX(0%);
+        }
+
+        header, .container{
+            left: 0;
+            width: 100%;
+        }
+
+        header.active, .container.active{
+            left: 20%;
+            width: 80%;
+        }
+    }
+
+
+
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Atividade 05</title>
+</head>
+
+<body>
+    <header id="header">
+        <div class="menu-sanduba">
+            &#9776
+        </div>
+        <h1> Atividade 05 </h1>
+
+    </header>
+
+    <nav class="nav-lateral">
+        <ul>
+            <li>
+                Link 1
+            </li>
+            <li>
+                Link 2
+            </li>
+            <li>
+                Link 3
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="colecao-accordeon">
+            <div class="accordeon">
+                <div class="accordeon-botao">
+                    <h3> Título 1</h3>
+                </div>
+                <div class="accordeon-conteudo">
+                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate aliquid quas illum ipsa delectus at enim? Temporibus earum, eum beatae quasi iste nisi esse dolorum, consectetur repellat eveniet tempore laboriosam? </p>
+                </div>
+            </div>
+            <div class="accordeon">
+                <div class="accordeon-botao">
+                    <h3> Título 2</h3>
+                </div>
+                <div class="accordeon-conteudo">
+                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate aliquid quas illum ipsa delectus at enim? Temporibus earum, eum beatae quasi iste nisi esse dolorum, consectetur repellat eveniet tempore laboriosam? </p>
+                </div>
+            </div>
+            <div class="accordeon">
+                <div class="accordeon-botao">
+                    <h3> Título 3</h3>
+                </div>
+                <div class="accordeon-conteudo">
+                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate aliquid quas illum ipsa delectus at enim? Temporibus earum, eum beatae quasi iste nisi esse dolorum, consectetur repellat eveniet tempore laboriosam? </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    let botao = document.querySelector(".menu-sanduba");
+    let nav_lateral = document.querySelector(".nav-lateral");
+    let head = document.getElementById("header");
+    let container = document.querySelector(".container");
+
+    botao.addEventListener("click", function(){
+        nav_lateral.classList.toggle("active");
+        header.classList.toggle("active");
+        container.classList.toggle("active");
+    });
+
+    let accordeon_ativar = document.querySelectorAll(".accordeon-botao");
+/*
+    Permite abrir todos ao mesmo tempo:
+
+    for (let i=0; i < accordeon_ativar.length; i++){
+        accordeon_ativar[i].addEventListener("click", function(){
+            let conteudo = accordeon_ativar[i].nextElementSibling;
+            conteudo.classList.toggle("active");
+        });
+
+    }
+  */
+
+    let accordeon_conteudo = document.querySelectorAll(".accordeon-conteudo");
+
+    for (let i=0; i < accordeon_ativar.length; i++){
+        accordeon_ativar[i].addEventListener("click", function(){
+            for(let j=0; j < accordeon_conteudo.length; j++){
+                if (i == j){
+                    accordeon_conteudo[j].classList.toggle("active");
+                }
+                else{
+                    accordeon_conteudo[j].classList.remove("active");
+                }
+            }
+        });
+    }
+
+
+
+
+</script>
+
+</body>
+
+</html>
