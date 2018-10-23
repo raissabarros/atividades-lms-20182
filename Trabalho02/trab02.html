@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ept-br>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Mali" rel="stylesheet">
+    <title>Trabalho 02</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Mali');
+
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    .divzona{
+        margin: auto;
+        background-color: blue;
+        width: 900px;
+        height: 100vh;
+    }
+
+    .header{
+        height: 50px;
+        background-color: aquamarine;
+        padding: 10px;
+        box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.3);
+        border: 0 0 2px 0 solid;
+        z-index: 2;
+    }
+
+    .titulo {
+        padding: 10px;
+        font-size: 20px;
+        font-family: 'Mali', cursive;
+        display: block;
+        float: left;
+    }
+
+    .entrar {
+        background-color:pink;
+        padding: 5px;
+        border-radius: 5px;
+        font-family: 'Mali', cursive;
+        cursor: pointer;
+        float: right;
+        margin: 10px;
+
+    }
+
+    .contatos{
+        width: 50%;
+        height: 90vh;
+        background-color: blanchedalmond;
+        display: block;
+        float: left;
+    }
+
+    .chat {
+        width: 50%;
+        height: 90vh;
+        background-color: pink;
+        display: block;
+        float: left;
+    }
+
+
+
+
+</style>
+<body>
+    <div class="divzona">
+        <div class="header">
+            <div class="titulo">
+                TeleHAM 🐹
+            </div>
+            <button class="entrar"> Entrar </button>
+
+        </div>
+        <div class="contatos">
+            <ul>
+                <div id="contatinhos"></div>
+            </ul>
+        </div>
+
+        
+        <div class="chat">
+            <div class="tituloConversa" id="tituloConversa"></div>
+            <div id="msg"></div>
+
+        </div>
+
+
+    </div>
+    
+    <script>
+
+    </script>
+</body>
+</html>
