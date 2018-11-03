@@ -1,0 +1,65 @@
+{
+  "groups": [
+    {
+      "id": "1",
+      "groupName": "Grupo da Família",
+      "groupID": "grupofamilia"
+    },
+    {
+      "id": "2",
+      "groupName": "Help LMS",
+      "groupID": "helplms"
+    },
+    {
+      "id": "3",
+      "groupName": "Ratas",
+      "groupID": "ratasufc"
+    }
+  ],
+  "grupofamilia": [
+    {
+      "id": "1",
+      "userName": "Mamãe",
+      "message": "Bom dia!"
+    },
+    {
+      "id": "2",
+      "userName": "Dalva",
+      "message": "Bom dia! Hoje tem bife!"
+    }
+  ],
+  "helplms": [
+    {
+      "id": "1",
+      "userName": "Raíssa",
+      "message": "Esse learncode não dá certo"
+    },
+    {
+      "id": "2",
+      "userName": "Mary",
+      "message": "Deus me dibre"
+    },
+    {
+      "id": "3",
+      "userName": "Edney",
+      "message": "Socorro"
+    }
+  ],
+  "ratasufc": [
+    {
+      "id": "1",
+      "userName": "Raíssa",
+      "message": "Cabaré das Ratas nessa sexta, tragam comidinhas"
+    },
+    {
+      "id": "2",
+      "userName": "Johnathan",
+      "message": "Obaaa! Eu vou!"
+    },
+    {
+      "id": "3",
+      "userName": "Jeff",
+      "message": "Preciso!"
+    }
+  ]
+}
