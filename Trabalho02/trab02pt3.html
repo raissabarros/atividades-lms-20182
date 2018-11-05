@@ -90,6 +90,71 @@
         padding: 10px;
     }
 
+
+    .modal-overlay {
+        background-color: rgba(0, 0, 0, 0.7);
+        opacity: 0;
+        height: 0;
+        transition: opacity 800ms, height 0ms 800ms;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        position: fixed;
+    }
+
+    .modal-overlay.active {
+        opacity: 1;
+        height: 100vh;
+        transition: opacity 800ms;
+    }
+
+    .modal {
+        width: 50%;
+        left: 50%;
+        top: 20%;
+        transform: translate(-50%, 0);
+        position: absolute;
+    }
+
+    .modal .modal-titulo {
+        height: 40px;
+        background-color: bisque;
+        width: 100%;
+        display: flex;
+        /* permite o align-itens e justify-content*/
+        align-items: center;
+        /* alinha verticalmente (e talvez horizontalmente) */
+        justify-content: space-between;
+        /* justifica, posiciona as divs e preenche com espaços */
+    }
+
+    .modal .modal-titulo h1,
+    .modal .modal-conteudo form {
+        padding: 10px;
+    }
+
+    .modal .modal-conteudo {
+        background-color: blanchedalmond;
+    }
+
+    .modal .modal-titulo .x {
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    .criar-grupo {
+        padding: 5px;
+    }
+
+    .cadastrou {
+        background-color:pink;
+        padding: 5px;
+        border-radius: 5px;
+        font-family: 'Mali', cursive;
+        cursor: pointer;
+    }
+
+
     /* classes criadas no JS */
 
     .li-lista {
@@ -128,6 +193,12 @@
 
         </div>
         <div class="contatos">
+            <form class="criar-grupo">
+                <input type="text" class="nome-novo-grupo" placeholder="Nome do Grupo">
+                <input type="text" class="id-novo-grupo" placeholder="ID do grupo">
+                <button type="submit" class="cadastrou">Cadastrar</button>
+
+            </form>
             <ul class="lista-contatinhos">
                 <!-- 
                 <li>
@@ -151,6 +222,22 @@
 
     </div>
 
+    <div class="modal-overlay">
+        <div class="modal">
+            <div class="modal-titulo">
+                <h1> Login </h1>
+                <div class="x">&#10006;</div>
+            </div>
+            <div class="modal-conteudo">
+                <form>
+                    <input type="text" placeholder="Usuário" class="usuario">
+                    <button class="login">Login</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
     <script>
         let lista_grupos = document.querySelector(".lista-contatinhos");
 
@@ -159,6 +246,7 @@
         let infoGrupos;
 
         function get_grupos() {
+            lista_grupos.innerHTML="";
             let xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                 if (xhttp.readyState == 4) {
@@ -216,32 +304,83 @@
         }
 
 
+        /* abrir o modal e logar */
 
+        let modal = document.querySelector(".modal-overlay");
+        let xzinho = document.querySelector(".x");
+        let botao_login = document.querySelector(".entrar");
 
-/*
-      
-
-       
-        
-
-        for (let i = 0; i < itens_grupos.length; i++) {
-            itens_grupos[i].addEventListener("click", function () {
-                console.log(lista_gruposEmensagens[i].grupo);
-
-                conversa_ativa.innerHTML = lista_gruposEmensagens[i].grupo;
-
-                mensagens.innerHTML = "";
-
-                for (let j = 0; j < lista_gruposEmensagens[i].mensagens.length; j++) {
-                    let paragrafo = document.createElement("p");
-
-                    paragrafo.innerHTML = lista_gruposEmensagens[i].mensagens[j].usuario + ":<br>" + lista_gruposEmensagens[i].mensagens[j].texto;
-
-                    mensagens.appendChild(paragrafo);
-                }
-            });
+        if (localStorage.getItem("usuariologado") !== null) {
+            botao_login.innerHTML = "Sair, " + localStorage.getItem("usuariologado");
         }
-*/
+
+        botao_login.addEventListener("click", function () {
+            if (localStorage.getItem("usuariologado") !== null) {    //saber se tem alguém logado. Se tiver, vai ser diferente de nulo
+                localStorage.removeItem("usuariologado");
+                botao_login.innerHTML = "Entrar";
+            } else {
+                modal.classList.add("active");
+                nickname.focus();   //pra não precisar clicar no campo de texto pra digitar (muda o foco)
+            }
+        });
+
+        xzinho.addEventListener("click", function () {
+            modal.classList.remove("active");
+        });
+
+        window.addEventListener("click", function () {
+            if (event.target == modal) {
+                modal.classList.remove("active");
+            }
+        });
+
+        let nickname = document.querySelector(".usuario");
+        let login_usuario = document.querySelector(".login");
+
+        login_usuario.addEventListener("click", function (event) {
+            event.preventDefault();
+            localStorage.setItem("usuariologado", nickname.value);    //guarda o nickname numa variável no browser
+            modal.classList.remove("active");
+            botao_login.innerHTML = "Sair, " + nickname.value;
+            nickname.value = "";
+        });
+
+
+
+        // Cadastrar novos grupos
+
+        let nome_novo_grupo = document.querySelector(".nome-novo-grupo");
+        let id_novo_grupo = document.querySelector(".id-novo-grupo");
+        let botao_cadastrou = document.querySelector(".cadastrou");
+
+        let postGrupo = function (nome_grupo, id_grupo) {
+            console.log(nome_grupo + " " + id_grupo);
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState == 4) {
+                    get_grupos();
+                }
+            }
+            let url = "http://localhost:3000/groups";
+            xhttp.open("POST", url, true);
+            xhttp.setRequestHeader("Content-type", "application/json");
+            let item = {
+                groupName: nome_grupo,
+                groupID: id_grupo
+            }
+
+
+            xhttp.send(JSON.stringify(item));
+        }
+
+    botao_cadastrou.addEventListener("click", function(e){
+        e.preventDefault();
+        postGrupo(nome_novo_grupo.value, id_novo_grupo.value);
+        nome_novo_grupo.value="";
+        id_novo_grupo.value="";
+
+    });
+
     </script>
 </body>
 
