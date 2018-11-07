@@ -147,13 +147,45 @@
     }
 
     .cadastrou {
-        background-color:pink;
+        background-color: pink;
         padding: 5px;
         border-radius: 5px;
         font-family: 'Mali', cursive;
         cursor: pointer;
     }
 
+
+    .chat .caixa-chat {
+        background-color: rgb(255, 218, 6);
+        height: auto;
+        bottom: 3px;
+        position: absolute;
+        width: 610px;
+        padding: 10px;
+
+    }
+
+    .enviar-msg {
+        background-color: pink;
+        padding: 5px;
+        border-radius: 5px;
+        font-family: 'Mali', cursive;
+        cursor: pointer;
+        float: right;
+        margin: 10px;
+    }
+
+    .chat .campo-mensagem {
+        width: 90%;
+        height: 25px;
+
+    }
+
+    .caixa-chat form {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
     /* classes criadas no JS */
 
@@ -218,6 +250,13 @@
                 <!-- msg 1 -->
             </div>
 
+            <div class="caixa-chat">
+                <form>
+                    <input type="text" class="campo-mensagem">
+                    <button class="enviar-msg">Enviar</button>
+                </form>
+            </div>
+
         </div>
 
     </div>
@@ -246,7 +285,7 @@
         let infoGrupos;
 
         function get_grupos() {
-            lista_grupos.innerHTML="";
+            lista_grupos.innerHTML = "";
             let xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                 if (xhttp.readyState == 4) {
@@ -274,14 +313,17 @@
 
         get_grupos();
 
+        let itens_grupos;
+
         function cliqueAtivo() {
             let conversa_ativa = document.querySelector(".titulo-conversa");
-            let itens_grupos = document.querySelectorAll(".li-lista");
+            itens_grupos = document.querySelectorAll(".li-lista");
             let mensagens = document.querySelector(".mensagem");
 
             for (let i = 0; i < itens_grupos.length; i++) {
                 itens_grupos[i].addEventListener("click", function () {
 
+                    grupo_ativo = i;
                     conversa_ativa.innerHTML = infoGrupos[i].groupName;
                     mensagens.innerHTML = "";
 
@@ -373,13 +415,53 @@
             xhttp.send(JSON.stringify(item));
         }
 
-    botao_cadastrou.addEventListener("click", function(e){
-        e.preventDefault();
-        postGrupo(nome_novo_grupo.value, id_novo_grupo.value);
-        nome_novo_grupo.value="";
-        id_novo_grupo.value="";
+        botao_cadastrou.addEventListener("click", function (e) {
+            e.preventDefault();
+            postGrupo(nome_novo_grupo.value, id_novo_grupo.value);
+            nome_novo_grupo.value = "";
+            id_novo_grupo.value = "";
 
-    });
+        });
+
+        //POST 
+
+        let grupo_ativo = -1;
+
+        let campo_mensagem = document.querySelector(".campo-mensagem");
+        let enviar_msg = document.querySelector(".enviar-msg");
+
+        enviar_msg.addEventListener("click", function (e) {
+            e.preventDefault();
+            let msg_digitada = campo_mensagem.value;
+            if (grupo_ativo == -1) {   //ou seja, se não tiver nenhum grupo ativado
+                window.alert("Selecione um grupo.");
+            }
+            else if (localStorage.getItem("usuariologado") === null) {   //verifica se tem usuário logado
+                window.alert("Faça login.");
+            }
+            else if (msg_digitada == "") {   //verifica se o campo da mensagem está vazio
+                window.alert("Digite uma mensagem.");
+            }
+            else {
+                let data = {
+                    userName: localStorage.getItem("usuariologado"),
+                    message: msg_digitada
+                };
+
+                let url = "http://localhost:3000/" + infoGrupos[grupo_ativo].groupID;
+
+                let xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (xhttp.readyState == 4) {
+                        itens_grupos[grupo_ativo].click();
+                        campo_mensagem.value = "";
+                    }
+                }
+                xhttp.open('POST', url, true);
+                xhttp.setRequestHeader("Content-type", "application/json");
+                xhttp.send(JSON.stringify(data));
+            }
+        })
 
     </script>
 </body>
